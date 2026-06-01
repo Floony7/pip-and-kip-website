@@ -1,0 +1,95 @@
+---
+type Props = {
+    title: string;
+};
+
+const { title } = Astro.props as Props;
+const path = Astro.url.pathname;
+---
+
+<header class="site-header">
+    <nav class="site-nav">
+        <a class="logo" href="/">{title}</a>
+        <ul>
+            <li>
+                <a href="/" aria-current={path === "/" ? "page" : undefined}
+                    >Home</a
+                >
+            </li>
+            <li>
+                <a
+                    href="/about"
+                    aria-current={path === "/about" ? "page" : undefined}
+                    >About</a
+                >
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    .site-header {
+        background: inherit;
+    }
+
+    .site-nav {
+        width: min(1100px, 92vw);
+        margin: 0 auto;
+        padding: 1.15rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .site-nav ul {
+        list-style: none;
+        display: flex;
+        gap: 0.35rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .site-nav a {
+        text-decoration: none;
+    }
+
+    .logo {
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    .site-nav li a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.35rem;
+        padding: 0.55rem 0.85rem;
+        border-radius: 999px;
+        color: color-mix(in oklch, var(--ink) 82%, var(--cyan));
+        font-weight: 700;
+        transition:
+            background-color 180ms ease,
+            color 180ms ease,
+            box-shadow 180ms ease,
+            transform 180ms ease;
+    }
+
+    .site-nav li a:hover,
+    .site-nav li a:focus-visible,
+    .site-nav li a[aria-current="page"] {
+        background: color-mix(in oklch, var(--surface) 58%, white);
+        color: var(--ink);
+        box-shadow: 0 0.45rem 1.25rem color-mix(in oklch, var(--cyan) 20%, transparent);
+    }
+
+    .site-nav li a:hover {
+        transform: translateY(-1px);
+    }
+
+    .site-nav li a:focus-visible {
+        outline: 2px solid color-mix(in oklch, var(--cyan) 75%, var(--ink));
+        outline-offset: 3px;
+    }
+</style>

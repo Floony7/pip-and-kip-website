@@ -1,0 +1,82 @@
+---
+type Slide = {
+  title: string;
+  copy: string;
+};
+
+type Props = {
+  slides: Slide[];
+};
+
+const { slides } = Astro.props;
+---
+
+<section class="section hero" aria-label="Highlights slider">
+  <swiper-container class="hero-swiper" init="false">
+    {
+      slides.map((slide) => (
+        <swiper-slide>
+          <article class="slide">
+            <h2>{slide.title}</h2>
+            <p>{slide.copy}</p>
+          </article>
+        </swiper-slide>
+      ))
+    }
+  </swiper-container>
+</section>
+
+<style>
+  .hero-swiper {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    min-height: 400px;
+  }
+</style>
+
+<script>
+  import { register } from "swiper/element/bundle";
+
+  // Register Swiper custom elements
+  register();
+
+  // Type definition for Swiper Element
+  interface SwiperContainer extends HTMLElement {
+    initialize: () => void;
+  }
+
+  const heroSwiper = document.querySelector(
+    ".hero-swiper",
+  ) as SwiperContainer | null;
+
+  if (heroSwiper) {
+    const swiperParams = {
+      direction: "horizontal" as const,
+      loop: true,
+      slidesPerView: 1,
+      breakpoints: {
+        900: {
+          slidesPerView: 3,
+          spaceBetween: 18,
+        },
+      },
+      autoplay: {
+        delay: 3200,
+        disableOnInteraction: false,
+      },
+      // Note: If you want to use pagination/navigation, ensure the elements exist
+      // or let Swiper Element handle it by setting these to true or custom config.
+      pagination: {
+        clickable: true,
+      },
+      navigation: true,
+    };
+
+    // Assign parameters to the element
+    Object.assign(heroSwiper, swiperParams);
+
+    // Initialize the swiper
+    heroSwiper.initialize();
+  }
+</script>

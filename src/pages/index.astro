@@ -1,0 +1,54 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import HeroSwiper from "../components/HeroSwiper.astro";
+import ProductTeaserCard from "../components/ProductTeaserCard.astro";
+import { featuredTeasers, homepageCards } from "../lib/content";
+
+// const res = await fetch(
+//   "https://api.etsy.com/v3/application/shops/13449101/listings/active?limit=100",
+//   {
+//     headers: {
+//       "x-api-key": import.meta.env.ETSY_API_KEY,
+//     },
+//   },
+// );
+// const data = await res.json();
+
+const heroSlides = [
+  {
+    title: "Crafted Finds, Calm Colors",
+    copy: "A clean storefront built for product storytelling and quick browsing.",
+  },
+  {
+    title: "Designed For Sync",
+    copy: "Layout leaves room for Etsy catalog feeds and real-time inventory hooks.",
+  },
+  {
+    title: "CMS-Friendly Structure",
+    copy: "Home modules map directly to component-driven headless content blocks.",
+  },
+  {
+    title: "Fast Seasonal Swaps",
+    copy: "Swap copy and visuals quickly as campaigns rotate across channels.",
+  },
+];
+---
+
+<MainLayout title="Home">
+  <HeroSwiper slides={heroSlides} />
+
+  <section class="columns" aria-label="Home content columns">
+    {
+      homepageCards.map((card) => (
+        <article class="card">
+          <h3>{card.title}</h3>
+          <p>{card.body}</p>
+        </article>
+      ))
+    }
+  </section>
+
+  <section class="product-grid" aria-label="Featured products">
+    {featuredTeasers.map((teaser) => <ProductTeaserCard {...teaser} />)}
+  </section>
+</MainLayout>

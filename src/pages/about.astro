@@ -1,0 +1,40 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="About">
+  <section class="section">
+    <h1>About Pip and Kip</h1>
+    <p>
+      This Astro setup is intentionally lightweight: shared layout, reusable
+      sections, and clear places for external data.
+    </p>
+    <p>
+      Etsy and headless CMS integration can be handled through server-side
+      endpoints, then rendered into existing cards and hero modules without
+      changing page structure.
+    </p>
+  </section>
+
+  <section class="columns" aria-label="About columns">
+    <article class="card">
+      <h3>Current Stack</h3>
+      <p>
+        Astro pages and static components for performance and maintainability.
+      </p>
+    </article>
+    <article class="card">
+      <h3>Near-Term Plan</h3>
+      <p>
+        Add API adapters in <code>src/lib</code> and fetch data in pages or endpoints.
+      </p>
+    </article>
+    <article class="card">
+      <h3>Scale Path</h3>
+      <p>
+        Promote reusable sections into CMS-configured blocks with typed
+        contracts.
+      </p>
+    </article>
+  </section>
+</MainLayout>

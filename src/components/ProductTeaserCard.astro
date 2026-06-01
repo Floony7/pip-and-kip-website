@@ -1,0 +1,21 @@
+---
+type Props = {
+  title: string;
+  description: string;
+  price: string;
+  href: string;
+  source?: string;
+};
+
+const { title, description, price, href, source = 'Etsy' } = Astro.props;
+---
+
+<article class="card product-card">
+  <p class="eyebrow">{source}</p>
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <div class="product-row">
+    <strong>{price}</strong>
+    <a href={href}>View Item</a>
+  </div>
+</article>
