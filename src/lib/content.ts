@@ -8,6 +8,7 @@ export type ProductTeaser = {
   description: string;
   price: string;
   href: string;
+  imgPath: string;
   source?: string;
 };
 
@@ -32,6 +33,7 @@ export const featuredTeasers: ProductTeaser[] = [
     description: 'A lightweight carryall inspired by the site palette for spring collections.',
     price: '$42',
     href: '#',
+    imgPath: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1000&q=85",
     source: 'Etsy',
   },
   {
@@ -39,6 +41,7 @@ export const featuredTeasers: ProductTeaser[] = [
     description: 'Small-batch tray for desks and vanities, ideal for limited seasonal drops.',
     price: '$24',
     href: '#',
+    imgPath: "https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1000&q=85",
     source: 'CMS Feature',
   },
   {
@@ -46,6 +49,7 @@ export const featuredTeasers: ProductTeaser[] = [
     description: 'Curated bundle format that maps cleanly to CMS-driven campaign content.',
     price: '$36',
     href: '#',
+    imgPath: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1000&q=85",
     source: 'Etsy',
   },
 ];

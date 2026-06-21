@@ -1,0 +1,27 @@
+---
+type Props = {
+  title: string;
+  description: string;
+  price: string;
+  href: string;
+  imgPath: string;
+  source?: string;
+};
+
+const { title, description, price, href, imgPath, source = "Small-batch favourite" } = Astro.props;
+---
+
+<article class="card product-card">
+  <a class="product-image" href={href} aria-label={`View ${title}`}>
+    <img src={imgPath} alt={title} loading="lazy" />
+    <span>{source}</span>
+  </a>
+  <div class="product-info">
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <div class="product-row">
+      <strong>{price}</strong>
+      <a href={href} aria-label={`View ${title}`}>View item <span>↗</span></a>
+    </div>
+  </div>
+</article>
