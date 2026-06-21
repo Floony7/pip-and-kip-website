@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Header from "../components/Header.astro";
+import { TAGLINE } from "../lib/constants";
 
 type Props = {
   title?: string;
@@ -17,7 +18,10 @@ const fullTitle = title ? `${baseTitle} | ${title}` : baseTitle;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Thoughtful gifts, keepsakes and small-batch treasures from Love from Pip and Kip." />
+    <meta
+      name="description"
+      content="Thoughtful gifts, keepsakes and small-batch treasures from Love from Pip and Kip."
+    />
     <title>{fullTitle}</title>
   </head>
   <body>
@@ -26,7 +30,13 @@ const fullTitle = title ? `${baseTitle} | ${title}` : baseTitle;
       <main>
         <slot />
       </main>
-      <footer><span>&copy; {currentYear} {baseTitle}</span><span>Thoughtful things, packed with care.</span></footer>
+      <footer>
+        <span>&copy; {currentYear} {baseTitle}</span><span
+          >Design by <a href="https://floony.dev" target="_blank"
+            >Fred Lunjevich</a
+          ></span
+        ><span>{TAGLINE}</span>
+      </footer>
     </section>
   </body>
 </html>
