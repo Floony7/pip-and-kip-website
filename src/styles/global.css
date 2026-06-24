@@ -4,7 +4,7 @@
   --teal: #087f8c;
   --aqua: #71c9ce;
   --sea-glass: #dff3f1;
-  --sky: #bde5f0;
+  --sky: #bde5f3;
   --paper: #fbfcfa;
   --white: #fff;
   --line: #c9dcdf;
@@ -56,7 +56,7 @@ footer {
 
 .hero {
   min-height: 690px;
-  padding: 4.5rem 0 5rem;
+  padding: 3rem 0 3rem;
   display: grid;
   grid-template-columns: 0.92fr 1.08fr;
   align-items: center;
@@ -237,7 +237,7 @@ h1 em {
 }
 
 .section-block {
-  padding: 7rem 0;
+  padding: 5rem 0;
 }
 
 .products {
@@ -384,7 +384,7 @@ h2 {
   grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
   gap: clamp(3rem, 7vw, 7rem);
-  padding-block: 9rem;
+  padding-block: 3rem;
 }
 
 .about-collage {

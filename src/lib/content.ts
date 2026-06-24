@@ -1,3 +1,7 @@
+import williamMorris from '../img/products/20251025_114735.jpg';
+import scandi from '../img/products/20251202_154953edit.png';
+import libertyCarnaby from '../img/products/20251214_151825.jpg';
+
 export type IntegrationCard = {
   title: string;
   body: string;
@@ -29,27 +33,27 @@ export const homepageCards: IntegrationCard[] = [
 
 export const featuredTeasers: ProductTeaser[] = [
   {
-    title: 'Handmade Ocean-Blue Tote',
-    description: 'A lightweight carryall inspired by the site palette for spring collections.',
-    price: '$42',
-    href: '#',
-    imgPath: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1000&q=85",
+    title: 'William Morris Collection',
+    description: 'High quality, sophisticated and appealing bags for the luxurious look.',
+    price: '',
+    href: 'https://www.etsy.com/uk/listing/4413632133/william-morris-fabricchristmas-bageco',
+    imgPath: williamMorris.src,
     source: 'Etsy',
   },
   {
-    title: 'Mint Ceramic Trinket Tray',
-    description: 'Small-batch tray for desks and vanities, ideal for limited seasonal drops.',
-    price: '$24',
-    href: '#',
-    imgPath: "https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1000&q=85",
-    source: 'CMS Feature',
+    title: 'Scandi Fabric Collection',
+    description: 'Scandinavian designs, beautiful and radiant bags.',
+    price: '',
+    href: 'https://www.etsy.com/uk/listing/4414866324/scandi-fabricchristmas-bageco',
+    imgPath: scandi.src,
+    source: 'Etsy',
   },
   {
-    title: 'Coastal Print Gift Set',
-    description: 'Curated bundle format that maps cleanly to CMS-driven campaign content.',
-    price: '$36',
-    href: '#',
-    imgPath: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1000&q=85",
+    title: 'Liberty Carnaby Collection',
+    description: 'New to our Liberty range of bags.',
+    price: '',
+    href: 'https://www.etsy.com/uk/shop/LoveFromPipandKip?section_id=56173223',
+    imgPath: libertyCarnaby.src,
     source: 'Etsy',
   },
 ];
