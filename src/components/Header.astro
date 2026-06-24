@@ -13,9 +13,11 @@ const path = Astro.url.pathname;
 <header class="site-header">
   <nav class="site-nav">
     <a class="logo" href="/#home" aria-label="Love from Pip and Kip home">
+      <span>With Love from</span>
       <img src={logo.src} alt={title} />
+      <span>Pip & Kip</span>
     </a>
-    <ul>
+    <ul class="nav-links">
       <li>
         <a href="/#home" aria-current={path === "/" ? "page" : undefined}
           >Home</a
@@ -26,7 +28,7 @@ const path = Astro.url.pathname;
         <a href="/#about">About</a>
       </li>
     </ul>
-    <a class="nav-cta" href="/#shop">Browse the collection</a>
+    <a class="nav-cta" href="/#shop" target="_blank">Browse the collection</a>
   </nav>
 </header>
 
@@ -35,9 +37,9 @@ const path = Astro.url.pathname;
     position: sticky;
     top: 0;
     z-index: 20;
-    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    background: color-mix(in srgb, var(--sky) 50%, transparent);
     backdrop-filter: blur(16px);
-    border-bottom: 1px solid color-mix(in srgb, var(--navy) 10%, transparent);
+    /* border-bottom: 1px solid color-mix(in srgb, var(--navy) 10%, transparent); */
   }
 
   .site-nav {
@@ -63,16 +65,23 @@ const path = Astro.url.pathname;
   }
 
   .logo {
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     line-height: 1;
+    gap: 5px;
   }
 
   .logo img {
     display: block;
     height: 7rem;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     width: auto;
+  }
+
+  .logo span {
+    font-family: "Hurricane", cursive;
+    font-size: 2rem;
   }
 
   .site-nav li a {
@@ -108,6 +117,7 @@ const path = Astro.url.pathname;
   }
 
   .nav-cta {
+    justify-self: start;
     display: inline-flex;
     align-items: center;
     gap: 0.65rem;
