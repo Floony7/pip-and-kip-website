@@ -18,11 +18,11 @@ const path = Astro.url.pathname;
       <span>Pip & Kip</span>
     </a>
     <ul class="nav-links">
-      <li>
+      <!-- <li>
         <a href="/#home" aria-current={path === "/" ? "page" : undefined}
           >Home</a
         >
-      </li>
+      </li> -->
       <li><a href={SHOP_URL}>Shop</a></li>
       <li>
         <a href="/#about">About</a>
@@ -130,21 +130,27 @@ const path = Astro.url.pathname;
     text-decoration: none;
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: 900px) {
     .site-nav {
-      padding: 0.7rem 0;
+      padding: 0.8rem 0 0.95rem;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.75rem;
     }
+
     .site-nav ul {
-      margin-left: auto;
-    }
-    .site-nav li:first-child {
-      display: none;
+      justify-content: center;
+      flex-wrap: wrap;
     }
     .nav-cta {
       display: none;
     }
     .logo img {
-      height: 2.2rem;
+      height: 5rem;
+    }
+
+    .logo span {
+      font-size: 1.7rem;
     }
   }
 </style>
