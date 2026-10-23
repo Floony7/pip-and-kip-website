@@ -10,46 +10,62 @@ import { baublesURL, catsURL, hollyURL } from "../lib/constants";
   <div class="collection-heading">
     <!-- <p class="eyebrow">A little Christmas magic</p> -->
     <h2 id="christmas-title">The Christmas Collection</h2>
-    <p>
-      Beautifully wrapped. Ready to give. Made to use again.
-    </p>
+    <p>Beautifully wrapped. Ready to give. Made to use again.</p>
   </div>
   <div class="collection-collage">
-    <a class="collection-link collection-main" href={baublesURL} target="_blank" rel="noopener noreferrer" aria-label="Shop Bauble Bags (opens in a new tab)">
-    <Image
-      src={baubles}
-      alt="Red and forest-green reusable gift bags with gold Christmas baubles and ribbon ties"
-      widths={[400, 640, 960]}
-      sizes="(max-width: 600px) calc(100vw - 4rem), (max-width: 900px) 390px, 340px"
-      width={960}
-      format="webp"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <a
+      class="collection-link collection-main"
+      href={baublesURL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Shop Bauble Bags (opens in a new tab)"
+    >
+      <Image
+        src={baubles}
+        alt="Red and forest-green reusable gift bags with gold Christmas baubles and ribbon ties"
+        widths={[400, 640, 960]}
+        sizes="(max-width: 600px) calc(100vw - 4rem), (max-width: 900px) 390px, 340px"
+        width={960}
+        format="webp"
+        loading="eager"
+        fetchpriority="high"
+      />
       <span class="collection-sticker" aria-hidden="true">Buy</span>
     </a>
-    <a class="collection-link" href={hollyURL} target="_blank" rel="noopener noreferrer" aria-label="Shop Holly Bags (opens in a new tab)">
-    <Image
-      src={holly}
-      alt="Red and green fabric gift bags patterned with holly leaves and berries"
-      widths={[240, 400, 640]}
-      sizes="(max-width: 600px) 45vw, (max-width: 900px) 220px, 190px"
-      width={640}
-      format="webp"
-      loading="eager"
-    />
+    <a
+      class="collection-link"
+      href={hollyURL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Shop Holly Bags (opens in a new tab)"
+    >
+      <Image
+        src={holly}
+        alt="Red and green fabric gift bags patterned with holly leaves and berries"
+        widths={[240, 400, 640]}
+        sizes="(max-width: 600px) 45vw, (max-width: 900px) 220px, 190px"
+        width={640}
+        format="webp"
+        loading="eager"
+      />
       <span class="collection-sticker" aria-hidden="true">Buy</span>
     </a>
-    <a class="collection-link" href={catsURL} target="_blank" rel="noopener noreferrer" aria-label="Shop Christmas Cat Bags (opens in a new tab)">
-    <Image
-      src={cats}
-      alt="Green drawstring gift bag with festive cats, Christmas trees and candy canes"
-      widths={[240, 400, 640]}
-      sizes="(max-width: 600px) 45vw, (max-width: 900px) 220px, 190px"
-      width={640}
-      format="webp"
-      loading="eager"
-    />
+    <a
+      class="collection-link"
+      href={catsURL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Shop Christmas Cat Bags (opens in a new tab)"
+    >
+      <Image
+        src={cats}
+        alt="Green drawstring gift bag with festive cats, Christmas trees and candy canes"
+        widths={[240, 400, 640]}
+        sizes="(max-width: 600px) 45vw, (max-width: 900px) 220px, 190px"
+        width={640}
+        format="webp"
+        loading="eager"
+      />
       <span class="collection-sticker" aria-hidden="true">Buy</span>
     </a>
   </div>
@@ -179,6 +195,10 @@ import { baublesURL, catsURL, hollyURL } from "../lib/constants";
     .collection-main {
       grid-column: 1 / -1;
       grid-row: auto;
+    }
+
+    h2 {
+      font-size: 2.75rem;
     }
   }
 </style>
