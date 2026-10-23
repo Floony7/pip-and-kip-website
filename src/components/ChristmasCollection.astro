@@ -1,0 +1,184 @@
+---
+import { Image } from "astro:assets";
+import baubles from "../img/products/christmas/20261017_140019.jpg";
+import holly from "../img/products/christmas/20261018_150721.jpg";
+import cats from "../img/products/christmas/20261018_152751.jpg";
+import { baublesURL, catsURL, hollyURL } from "../lib/constants";
+---
+
+<section class="christmas-collection" aria-labelledby="christmas-title">
+  <div class="collection-heading">
+    <!-- <p class="eyebrow">A little Christmas magic</p> -->
+    <h2 id="christmas-title">The Christmas Collection</h2>
+    <p>
+      Beautifully wrapped. Ready to give. Made to use again.
+    </p>
+  </div>
+  <div class="collection-collage">
+    <a class="collection-link collection-main" href={baublesURL} target="_blank" rel="noopener noreferrer" aria-label="Shop Bauble Bags (opens in a new tab)">
+    <Image
+      src={baubles}
+      alt="Red and forest-green reusable gift bags with gold Christmas baubles and ribbon ties"
+      widths={[400, 640, 960]}
+      sizes="(max-width: 600px) calc(100vw - 4rem), (max-width: 900px) 390px, 340px"
+      width={960}
+      format="webp"
+      loading="eager"
+      fetchpriority="high"
+    />
+      <span class="collection-sticker" aria-hidden="true">Buy</span>
+    </a>
+    <a class="collection-link" href={hollyURL} target="_blank" rel="noopener noreferrer" aria-label="Shop Holly Bags (opens in a new tab)">
+    <Image
+      src={holly}
+      alt="Red and green fabric gift bags patterned with holly leaves and berries"
+      widths={[240, 400, 640]}
+      sizes="(max-width: 600px) 45vw, (max-width: 900px) 220px, 190px"
+      width={640}
+      format="webp"
+      loading="eager"
+    />
+      <span class="collection-sticker" aria-hidden="true">Buy</span>
+    </a>
+    <a class="collection-link" href={catsURL} target="_blank" rel="noopener noreferrer" aria-label="Shop Christmas Cat Bags (opens in a new tab)">
+    <Image
+      src={cats}
+      alt="Green drawstring gift bag with festive cats, Christmas trees and candy canes"
+      widths={[240, 400, 640]}
+      sizes="(max-width: 600px) 45vw, (max-width: 900px) 220px, 190px"
+      width={640}
+      format="webp"
+      loading="eager"
+    />
+      <span class="collection-sticker" aria-hidden="true">Buy</span>
+    </a>
+  </div>
+</section>
+
+<style>
+  .christmas-collection {
+    min-width: 0;
+    padding: clamp(1rem, 2vw, 1.5rem);
+    border: 1px solid var(--line);
+    border-radius: 2rem;
+    color: white;
+    background: #73ba9b;
+    box-shadow: 0 24px 60px #123b4914;
+  }
+
+  .eyebrow {
+    color: #003e1f;
+    text-shadow: 2px 1px 2px white;
+    margin-bottom: 0.75rem;
+  }
+
+  .collection-heading {
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: clamp(1.8rem, 3vw, 2.75rem);
+    line-height: 1.1;
+    color: #d90429;
+    text-shadow: 4px 2px 4px white;
+  }
+
+  .collection-intro {
+    margin: 1rem 0 0;
+    color: #4c6068;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .collection-collage {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    aspect-ratio: 1.45;
+  }
+
+  .collection-link {
+    display: block;
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    border-radius: 0.9rem;
+    background: var(--paper);
+    color: var(--navy);
+    text-decoration: none;
+  }
+
+  .collection-sticker {
+    position: absolute;
+    top: -0.25rem;
+    right: -0.25rem;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 3.25rem;
+    aspect-ratio: 1;
+    border: 2px solid #fff5dc;
+    border-radius: 50%;
+    background: #d90429;
+    color: white;
+    box-shadow: 0 4px 10px #092c3d30;
+    font-family: "Croissant One", serif;
+    font-size: 1rem;
+    transform: rotate(10deg);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .collection-main .collection-sticker {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .collection-link:hover .collection-sticker,
+  .collection-link:focus-visible .collection-sticker {
+    background: #003e1f;
+    transform: rotate(-20deg);
+  }
+
+  .collection-link:focus-visible {
+    outline: 3px solid var(--navy);
+    outline-offset: 4px;
+  }
+
+  .collection-collage img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: cover;
+    border-radius: 0.9rem;
+  }
+
+  .collection-main {
+    grid-row: 1 / -1;
+  }
+
+  @media (max-width: 900px) {
+    .christmas-collection {
+      width: min(650px, 100%);
+      margin-inline: auto;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .collection-collage {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: auto auto;
+      aspect-ratio: auto;
+    }
+
+    .collection-collage img {
+      aspect-ratio: 1;
+      height: auto;
+    }
+
+    .collection-main {
+      grid-column: 1 / -1;
+      grid-row: auto;
+    }
+  }
+</style>

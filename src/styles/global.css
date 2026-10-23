@@ -131,6 +131,7 @@ h2 {
 .hero-actions {
   margin-top: 2rem;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 1.6rem;
 }

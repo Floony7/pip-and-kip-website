@@ -1,12 +1,12 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
+import ChristmasCollection from "../components/ChristmasCollection.astro";
 // import HeroSwiper from "../components/HeroSwiper.astro";
 import ProductCard from "../components/ProductCard.astro";
 import { featuredTeasers } from "../lib/content";
 import { ORG_NAME, TAGLINE, SHOP_URL } from "../lib/constants";
 import pipAndKip from "../img/kip.webp";
-import lineOfBags from "../img/bag-line-up.jpg";
 import pipAndKipGarden from "../img/pip-and-kip-garden.jpg";
 // import { fetchEtsyProductSlides } from "../lib/etsyProducts";
 
@@ -23,8 +23,8 @@ import pipAndKipGarden from "../img/pip-and-kip-garden.jpg";
         to landfill. Make every occasion special.
       </p>
       <div class="hero-actions">
-        <a class="button button-primary" href={SHOP_URL}
-          >Shop favourites <span>↗</span></a
+        <a class="button button-primary" href={SHOP_URL} target="_blank"
+          >Shop Now <span aria-hidden="true">↗</span></a
         >
         <a class="text-link" href="#about"
           >The Pip and Kip story<span>↓</span></a
@@ -36,28 +36,7 @@ import pipAndKipGarden from "../img/pip-and-kip-garden.jpg";
         <span>✦ Made for gifting</span>
       </div>
     </div>
-    <div
-      class="hero-visual"
-      aria-label="A collection of colourful Pip and Kip gifts"
-    >
-      <Image
-        src={lineOfBags}
-        format="webp"
-        quality={80}
-        width={960}
-        widths={[480, 640, 960, 1280, 1920]}
-        sizes="(max-width: 600px) calc(96vw - 1.92rem), (max-width: 706px) 88.32vw, (max-width: 900px) 624px, (max-width: 1304px) 45.1vw, 590px"
-        loading="eager"
-        fetchpriority="high"
-        alt="A selection of beautifully wrapped gifts"
-      />
-      <!-- <div class="hero-sticker">
-        <strong>Made to</strong><br />bring joy <span>♥</span>
-      </div> -->
-      <!-- <div class="hero-caption">
-        <span>New</span><p>Fresh finds for brighter days</p>
-      </div> -->
-    </div>
+    <ChristmasCollection />
   </section>
 
   <section class="products section-block" id="shop">
