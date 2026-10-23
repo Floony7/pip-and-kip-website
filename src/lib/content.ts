@@ -1,3 +1,5 @@
+import type { ImageMetadata } from 'astro';
+
 import williamMorris from '../img/products/20251025_114735.jpg';
 import scandi from '../img/products/20251202_154953edit.png';
 import libertyCarnaby from '../img/products/20251214_151825.jpg';
@@ -12,7 +14,7 @@ export type ProductTeaser = {
   description: string;
   price: string;
   href: string;
-  imgPath: string;
+  imgPath: ImageMetadata;
   source?: string;
 };
 
@@ -37,7 +39,7 @@ export const featuredTeasers: ProductTeaser[] = [
     description: 'High quality, sophisticated and appealing bags for the luxurious look.',
     price: '',
     href: 'https://www.etsy.com/uk/listing/4413632133/william-morris-fabricchristmas-bageco',
-    imgPath: williamMorris.src,
+    imgPath: williamMorris,
     source: 'Etsy',
   },
   {
@@ -45,7 +47,7 @@ export const featuredTeasers: ProductTeaser[] = [
     description: 'Scandinavian designs, beautiful and radiant bags.',
     price: '',
     href: 'https://www.etsy.com/uk/listing/4414866324/scandi-fabricchristmas-bageco',
-    imgPath: scandi.src,
+    imgPath: scandi,
     source: 'Etsy',
   },
   {
@@ -53,7 +55,7 @@ export const featuredTeasers: ProductTeaser[] = [
     description: 'New to our Liberty range of bags.',
     price: '',
     href: 'https://www.etsy.com/uk/shop/LoveFromPipandKip?section_id=56173223',
-    imgPath: libertyCarnaby.src,
+    imgPath: libertyCarnaby,
     source: 'Etsy',
   },
 ];
