@@ -1,7 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import logo from "../img/pipandkip-logo.png";
-import { SHOP_URL } from "../lib/constants";
+import EmailIcon from "./EmailIcon.astro";
+import { SHOP_URL, CONTACT_URL } from "../lib/constants";
 
 type Props = {
   title: string;
@@ -37,6 +38,7 @@ const path = Astro.url.pathname;
       <li>
         <a href="/#about">About</a>
       </li>
+      <li><a class="email-link" href={CONTACT_URL}><EmailIcon />Email us</a></li>
     </ul>
     <a class="nav-cta" href="/#shop" target="_blank">Browse the collection</a>
   </nav>

@@ -1,11 +1,12 @@
 ---
 import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
+import EmailIcon from "../components/EmailIcon.astro";
 import ChristmasCollection from "../components/ChristmasCollection.astro";
 // import HeroSwiper from "../components/HeroSwiper.astro";
 import ProductCard from "../components/ProductCard.astro";
 import { featuredTeasers } from "../lib/content";
-import { ORG_NAME, TAGLINE, SHOP_URL } from "../lib/constants";
+import { ORG_NAME, TAGLINE, SHOP_URL, CONTACT_URL } from "../lib/constants";
 import pipAndKip from "../img/kip.webp";
 import pipAndKipGarden from "../img/pip-and-kip-garden.jpg";
 // import { fetchEtsyProductSlides } from "../lib/etsyProducts";
@@ -30,6 +31,9 @@ import pipAndKipGarden from "../img/pip-and-kip-garden.jpg";
           >The Pip and Kip story<span>↓</span></a
         >
       </div>
+      <p class="hero-contact">
+        Have a question? <a class="email-link" href={CONTACT_URL}><EmailIcon />Email us</a>
+      </p>
       <div class="hero-notes" aria-label="Store benefits">
         <span>✦ Thoughtfully sourced</span>
         <span>✦ Reusable</span>
